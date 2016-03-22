@@ -1,0 +1,56 @@
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://i1074.photobucket.com/albums/w411/mohamedchalal/Drawing%202_zpsouomr6t0.png" alt="gamr logo"/>
+
+    </div>
+    <% @featured_games.each do |game| %>
+
+    <div class="item">
+      <img><%link_to image_tag(game.photo_url), category_game_path(@game, @category)%>/>
+    </div>
+
+    <% end %>
+  </div>
+
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<% @featured_games.each do |game| %>
+
+<p class="quotes">
+  <%=@quotesArrayOne[@i] %><span class="secondSentence"> <%= @quotesArrayTwo[@i]%></span> <span class="authorName"><%=@quotesArrayThree[@i]%></span>
+</p>
+<%  @i = @i+1 unless @i = @featured_games.count%>
+<%end%>
+
+<script type="text/javascript">
+$("#myCarousel").carousel();
+
+$(".item").click(function(){
+  $("#myCarousel").carousel(1);
+});
+
+$(".left").click(function(){
+  $("#myCarousel").carousel("prev");
+});
+
+</script>
