@@ -5,14 +5,14 @@ class GamesController < ApplicationController
 
   # new
   def new
-    @game = Game.new(game_params)
+    @game = Game.new
   end
 
   # create
   def create
     @game = Game.create!(game_params)
 
-    redirect_to game(game_params)
+    redirect_to root_path
   end
 
   #show
@@ -29,16 +29,23 @@ class GamesController < ApplicationController
   # update
   def update
     @game = Game.find(params[:id])
+    @game.update(game_params)
+    redirect_to game_path(@game)
   end
 
   # destroy
   def destroy
     @game = Game.find(params[:id])
+    @game.destroy
+
+    redirect_to games_path
   end
+
+
 
   private
   def game_params
-    params.require(:game).permit(:name, :img_url, :release_date, :price)
+    params.require(:game).permit(:name, :img_url, :release_date, :price, :featured, :photo_url, :tags)
   end
 
 end

@@ -11,15 +11,31 @@
 </head>
 
 <body>
+
+
+  <div class="registration">
+    <% if !current_user %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= " " %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%else%>
+    <%= link_to "Log Out of #{current_user.email}", destroy_user_session_path, method: :delete %>
+    <%end%>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3">
       <div class="mainLogo">
-        <%=link_to image_tag("http://s11.postimg.org/u7k39xs0z/Drawing_10.png")%>
+        <%=link_to image_tag("http://s11.postimg.org/u7k39xs0z/Drawing_10.png"), root_path%>
       </div>
     </div>
   </div>
-<%= yield %>
 
+
+
+  <%= yield %>
 
 
 </body>
