@@ -79,7 +79,7 @@ div[class='first_picture'] img {
   border-top: 3px solid white;
 }
 .carousel-control {
-  opacity: .5;
+  opacity: .2;
   background-color: black;
   border-radius: 20px;
   height: 400px;
