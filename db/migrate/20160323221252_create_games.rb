@@ -3,11 +3,10 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :name
       t.float :price
-      t.date :release_date
-      t.boolean :featured
       t.string :photo_url
-
-      t.timestamps
+      t.string :tags
+      t.boolean :featured
+      t.date :release_date
     end
   end
 end
