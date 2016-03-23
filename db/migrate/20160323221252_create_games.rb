@@ -7,6 +7,8 @@ class CreateGames < ActiveRecord::Migration
       t.string :tags
       t.boolean :featured
       t.date :release_date
+
+      t.timestamps
     end
   end
 end
