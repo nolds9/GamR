@@ -20,7 +20,7 @@
     </div>
     <% @featured_games.each do |game| %>
 
-    <div class="item">
+    <div class="items">
       <%=link_to image_tag(game.photo_url), game_path(game)%>
     </div>
 
