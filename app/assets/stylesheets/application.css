@@ -65,7 +65,7 @@ div[class='carousel-inner'] {
   max-height: 350px;
   max-width: 800px;
   position: relative;
-  margin: 0 auto;
+  margin: 75px auto 0 auto;
   border-radius: 20px;
 }
 .carousel-indicators {
