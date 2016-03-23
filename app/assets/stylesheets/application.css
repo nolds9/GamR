@@ -64,9 +64,10 @@ div[class='carousel-inner'] {
 div[class='first_picture'] img {
   max-height: 400px;
   max-width: 800px;
-  position: relative;
+  margin: auto auto;
+  border-radius: 20px;
 }
-.items img {
+.pictures img {
   max-height: 400px;
   max-width: 800px;
   position: relative;
