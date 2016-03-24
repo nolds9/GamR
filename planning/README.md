@@ -1,5 +1,5 @@
 GamR!
-youtube: https://www.youtube.com/watch?v=8aIG5VFsLcE <bad sound quality>
+youtube: https://www.youtube.com/watch?v=1g2MqVoFxX0
 Heroku: https://gamr-mohamed.herokuapp.com/
 GitHub: https://github.com/mohamedrchalal/GamR/tree/deploying
 
