@@ -1,6 +1,7 @@
 GamR!
 youtube: https://www.youtube.com/watch?v=8aIG5VFsLcE <bad sound quality>
 Heroku: https://gamr-mohamed.herokuapp.com/
+GitHub: https://github.com/mohamedrchalal/GamR/tree/deploying
 
 How to use app:
 1. Sign in or Sign up
