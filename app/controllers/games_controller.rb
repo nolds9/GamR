@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  # creates array of featured games
   def index
     @featured_games = Game.where(featured: true)
   end

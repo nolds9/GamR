@@ -1,6 +1,7 @@
+<!-- only displays carousel if signed in -->
 <% if current_user %>
 <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
-
+<!-- creates new data-slide for each game that is featured -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <% @featured_games.each do |game| %>
@@ -8,15 +9,14 @@
     <% end %>
   </ol>
 
-
+<!-- makes first picture always link to add new game to collection -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <div class="first_picture">
           <%=link_to image_tag("http://s10.postimg.org/b6igfrtux/Drawing_12.png"), new_game_path%>
       </div>
-          <!-- <img class="first_picture"src="http://s14.postimg.org/rvn7kdcdt/Drawing_11.png" alt="gamr logo"/> -->
 
-
+<!-- populates carousel with each image of each featured game -->
     </div>
     <% @featured_games.each do |game| %>
 
@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-
+<!-- carousel control -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -37,6 +37,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<!-- list of all games -->
 <h2>Games</h2>
 <div class="container-fluid all_games">
 <% Game.all.each do |game| %>
@@ -50,13 +51,13 @@
 
 </div>
 
-
+<!-- if user not signed in, displays this message -->
 <% else %>
 <div class="devise_forms">
   <%= "you must be signed in to view content!" %>
 </div>
 <% end %>
-
+<!-- jquery for carousel control bootstap -->
 <script type="text/javascript">
 $("#myCarousel").carousel();
 

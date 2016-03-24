@@ -12,7 +12,7 @@
 
 <body>
 
-
+<!-- displays sign up/in if not signed in, and sign out if signed in -->
   <div class="registration">
     <% if !current_user %>
     <%= link_to "Sign Up", new_user_registration_path %>
@@ -24,7 +24,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
-
+<!-- main logo display -->
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3">
       <div class="mainLogo">
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-
+<!-- populates appropriate page -->
 
   <%= yield %>
 
