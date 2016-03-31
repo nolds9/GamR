@@ -1,71 +1,68 @@
 <% if current_user %>
-<div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
 
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <% @featured_games.each do |game| %>
-    <li data-target="#myCarousel" data-slide-to="<%=game.id%>"></li>
-    <% end %>
-  </ol>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <% @featured_games.each do |game| %>
+        <li data-target="#myCarousel" data-slide-to="<%=game.id%>"></li>
+      <% end %>
+    </ol>
 
-
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <div class="first_picture">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="first_picture">
           <%=link_to image_tag("http://s10.postimg.org/b6igfrtux/Drawing_12.png"), new_game_path%>
+        </div>
+        <!-- NHO: reminder to remove commented out code -->
+        <!-- <img class="first_picture"src="http://s14.postimg.org/rvn7kdcdt/Drawing_11.png" alt="gamr logo"/> -->
+
       </div>
-          <!-- <img class="first_picture"src="http://s14.postimg.org/rvn7kdcdt/Drawing_11.png" alt="gamr logo"/> -->
-
-
-    </div>
-    <% @featured_games.each do |game| %>
-
-    <div class="item">
-      <%=link_to image_tag(game.photo_url), game_path(game)%>
+      <% @featured_games.each do |game| %>
+        <div class="item">
+          <%=link_to image_tag(game.photo_url), game_path(game)%>
+        </div>
+      <% end %>
     </div>
 
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <h2>Games</h2>
+  
+  <div class="container-fluid all_games">
+    <!-- NHO: This works, but we want to have our data queries in the controller  -->
+    <% Game.all.each do |game| %>
+    <div class="row">
+      <div class="col-sm-12 sidebar centered">
+        <%= link_to game.name, game_path(game.id) %>
+      </div>
+    </div>
     <% end %>
   </div>
 
-
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<h2>Games</h2>
-<div class="container-fluid all_games">
-<% Game.all.each do |game| %>
-  <div class="row">
-    <div class="col-sm-12 sidebar centered">
-      <%= link_to game.name, game_path(game.id) %>
-    </div>
-  </div>
-<% end %>
-</div>
-
-</div>
-
+  </div> <!-- NHO: is this a stray closing div tag? -->
 
 <% else %>
-<div class="devise_forms">
-  <%= "you must be signed in to view content!" %>
-</div>
+  <div class="devise_forms">
+    <%= "you must be signed in to view content!" %>
+  </div>
 <% end %>
 
 <script type="text/javascript">
-$("#myCarousel").carousel();
+  $("#myCarousel").carousel();
 
-$(".item").click(function(){
-  $("#myCarousel").carousel(1);
-});
+  $(".item").click(function () {
+    $("#myCarousel").carousel(1);
+  });
 
-$(".left").click(function(){
-  $("#myCarousel").carousel("prev");
-});
-
+  $(".left").click(function () {
+    $("#myCarousel").carousel("prev");
+  });
 </script>

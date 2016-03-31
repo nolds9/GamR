@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def index
     @featured_games = Game.where(featured: true)
+    # NHO: Like this idea, who decides what games are featured? Could also include an index of all games / filter
   end
 
   # new

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# NHO: while not a necessity, would recommend adding some seeds so you can easily test you app in development
+# and other developers can get a feel for the app when they run it locally
