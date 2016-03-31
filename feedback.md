@@ -1,6 +1,6 @@
 # Project 2 Evaluation
 
-Please review [inline code comments](https://github.com/holytoastr/project2/compare/master...nolds9:feedback) prefixed with my initials `NHO`
+Please review [inline code comments](https://github.com//mohamedrchalal/gamr/compare/master...nolds9:feedback) prefixed with my initials `NHO`
 
 ## Technical Requirements
 
